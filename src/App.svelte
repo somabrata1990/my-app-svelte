@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
     import { Router, Route } from "svelte-routing";
     import Sidebar from "./components/sidebar.svelte";
     import About from "./pages/About.svelte";
     import Home from "./pages/Home.svelte";
     import Login from "./pages/Login.svelte";
-    export let name;
+    export let name: string;
     let user = {
         loggedIn: false,
     };
