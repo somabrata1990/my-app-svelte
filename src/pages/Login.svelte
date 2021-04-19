@@ -23,41 +23,27 @@
 
 <div class="wrapper">
     <div class="content">
-        <div class="field">
-            <span>Username :</span>
-            <input type="text" on:change={setUsername} />
-        </div>
-        <div class="field">
-            <span>Password  :</span>
-            <input type="password" on:change={setPassword} />
-        </div>
-        <div class="field-center">
-            <button on:click={login}>Login</button>
-        </div>
-        
+        <form on:submit={login}>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="username" class="form-control" on:change={setUsername} placeholder="Enter username" required>
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" on:change={setPassword} placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
     </div>
 </div>
 
 <style>
     .wrapper {
         margin: auto;
-        font-size: 20px;
-    }
-    .content{
-        /* display: flex;
-        flex-direction: column; */
-    }
-    .field{
-        display: flex;
-        justify-content: space-between;
-        width: 400px;
-        padding: 5px 0px;
-    }
-    .field input {
-            width: 200px;
-        }
-    .field-center{
-        display: flex;
-        justify-content: flex-end;
+        width: 20%;
+        min-width: 300px;
+        padding-top: 5%;
+        /* font-size: 20px; */
     }
 </style>

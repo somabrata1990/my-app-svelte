@@ -1,12 +1,12 @@
 <script lang="ts">
     import { Router, Route } from "svelte-routing";
-    import Sidebar from "./components/sidebar.svelte";
+    import Sidebar from "./components/Sidebar.svelte";
     import About from "./pages/About.svelte";
     import Home from "./pages/Home.svelte";
     import Login from "./pages/Login.svelte";
     export let name: string;
     let user = {
-        loggedIn: false,
+        loggedIn: true,
     };
     function onSuccess() {
         user.loggedIn = true;
@@ -15,18 +15,17 @@
 
 <div class="app">
     <div class="header">{name}</div>
-    <div class="wrapper">
+    <div>
         {#if user.loggedIn}
-            <div class="sidebar">
+            <div class="container-fluid">
+                <!-- Content here -->
                 <Sidebar />
             </div>
-            <div class="content">
+            <div class="container-fluid content">
                 <Router url="/">
-                    <div>
-                        <Route path="home" component={Home} />
-                        <Route path="about" component={About} />
-                        <Route path="/" component={Home} />
-                    </div>
+                    <Route path="home" component={Home} />
+                    <Route path="about" component={About} />
+                    <Route path="/" component={Home} />
                 </Router>
             </div>
         {:else}
@@ -45,21 +44,10 @@
         text-align: center;
         font-size: 50px;
         font-weight: bolder;
-    }
-    .wrapper {
-        height: calc(100vh - 60px);
-        display: flex;
-    }
-    .sidebar {
-        width: 20%;
-        min-width: 300px;
-        background-color: black;
+        text-decoration: underline;
     }
     .content {
-        width: 80%;
-        display: flex;
-        justify-content: space-evenly;
-        padding-top: 20px;
-        flex-wrap: wrap;
+        height: calc(100vh - 150px);
+        overflow: auto;
     }
 </style>

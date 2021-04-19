@@ -3,27 +3,17 @@
     export let content = "Content";
 </script>
 
-<div class="card-container">
-    <div class="title">{title}</div>
-    <div class="content">{content}</div>
+<div class="wrapper">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{title}</h5>
+            <p class="card-text">{content}</p>
+        </div>
+    </div>
 </div>
 
 <style>
-    .card-container {
-        height: 300px;
-        width: 300px;
-        background-color: white;
-        border: 1px solid black;
-        padding: 5px;
-        box-shadow: 5px 10px grey;
-    }
-    .title{
-        text-align: center;
-        font-size: 20px;
-        font-weight: 500;
-        text-decoration: underline;
-    }
-    .content{
-        font-size: 14px;
+    .wrapper{
+        margin-bottom: 10px;
     }
 </style>
