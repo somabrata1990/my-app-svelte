@@ -30,9 +30,3 @@
         </div>
     </nav>
 </Router>
-
-<style>
-    .wrapper {
-        margin-top: 20px;
-    }
-</style>

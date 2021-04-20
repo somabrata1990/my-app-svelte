@@ -6,7 +6,7 @@
     import Login from "./pages/Login.svelte";
     export let name: string;
     let user = {
-        loggedIn: true,
+        loggedIn: false,
     };
     function onSuccess() {
         user.loggedIn = true;
