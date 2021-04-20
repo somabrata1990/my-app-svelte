@@ -17,7 +17,7 @@
     <div class="header">{name}</div>
     <div>
         {#if user.loggedIn}
-            <div class="container-fluid">
+            <div>
                 <!-- Content here -->
                 <Sidebar />
             </div>
@@ -47,7 +47,7 @@
         text-decoration: underline;
     }
     .content {
-        height: calc(100vh - 150px);
+        height: calc(100vh - 100px);
         overflow: auto;
     }
 </style>
